@@ -22,7 +22,7 @@ export const AddNewCat=createAsyncThunk('cats/AddNewCat', async(cat)=>{
     return res.data
 })
 export const reCheckCat=createAsyncThunk('cats/reCheckCat', async(cat)=>{
-    const res=await axios.put(url + "/" + cat.id,{...cat, checked: !cat.checked})
+    const res=await axios.put(url + "/" + cat.id, {...cat, checked: !cat.checked})
     return res.data
 })
 const catsSlice=createSlice({
@@ -49,7 +49,7 @@ const catsSlice=createSlice({
             state.cats=[...state.cats, action.payload]
         })
         .addCase(reCheckCat.fulfilled,(state, action)=>{
-            state.cats=state.cats.map(item=>item.id===action.payload.id?{...item, checled:!item.checked}:item)
+            state.cats=state.cats.map(item=>item.id===action.payload.id?{...item, checked:true}:item)
         })
     }
 })
