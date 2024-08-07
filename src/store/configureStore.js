@@ -1,10 +1,10 @@
 import {configureStore} from '@reduxjs/toolkit'
-import catsSlice from './catsSlice'
+import food from './features/foodSlice'
 
 
 const store=configureStore({
     reducer:{
-        cats: catsSlice
+        food: food
     }
 })
 export default store
